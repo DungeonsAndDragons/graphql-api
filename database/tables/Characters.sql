@@ -3,7 +3,6 @@ CREATE TABLE Characters(
     name               TEXT,
     experience         INTEGER, -- total amount of experience-points
     alignment          INTEGER,
-    class              INTEGER REFERENCES Classes,
     proficiencyBonus   INTEGER,
     armorClass         INTEGER,
     initiative         INTEGER,
@@ -26,5 +25,7 @@ CREATE TABLE Characters(
     lore               TEXT,
     money              INTEGER REFERENCES Money,
     spells             *TODO*,
+    race               INTEGER REFERENCES Races,
+    subrace            INTEGER REFERENCES Subraces
     player             INTEGER REFERENCES Players
 );
