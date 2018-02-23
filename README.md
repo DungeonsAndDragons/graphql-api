@@ -1,2 +1,2 @@
-# graphql-api
-GraphQL API definitions
+# schemes
+GraphQL and SQLite database definitions used in the server
