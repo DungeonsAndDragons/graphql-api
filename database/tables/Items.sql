@@ -7,12 +7,12 @@ CREATE TABLE Items (
     rarity             TEXT,
     isMagic            BOOLEAN,
     requiresAttunement BOOLEAN,
-	attuneRequirement  BOOLEAN,
+    attuneRequirement  BOOLEAN,
     cost               INTEGER REFERENCES Money,
     weight             INTEGER,
     damage             INTEGER REFERENCES DiceThrow,
     damageType         TEXT,
     criticalMultiplier INTEGER,
-	specialAbility     TEXT,
+    specialAbility     TEXT,
     fullText           TEXT
 );
