@@ -85,9 +85,9 @@ type Skill {
     id: ID!,
     type: SkillType!,
     proficiency: Boolean!,
-	# Rogues and bards (and some special subclasses) 
-	# use double proficiency bonus (expertise) on their checks
-	expertise: Boolean!, 
+    # Rogues and bards (and some special subclasses) 
+    # use double proficiency bonus (expertise) on their checks
+    expertise: Boolean!, 
     modifier: Int!
 }
 
@@ -109,8 +109,8 @@ type Class {
 
 # For multiclassing purposes
 type LeveledClass {
-	class: Class!,
-	level: Int!
+    class: Class!,
+    level: Int!
 }
 
 type Health {
@@ -180,7 +180,7 @@ type Character {
     alignment: Alignment,
 
 
-	# For multiclassing purposes
+    # For multiclassing purposes
     classes: [LeveledClass!],
 
 
