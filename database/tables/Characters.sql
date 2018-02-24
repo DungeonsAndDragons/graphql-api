@@ -24,8 +24,7 @@ CREATE TABLE Characters(
     hair               TEXT,
     lore               TEXT,
     money              INTEGER REFERENCES Money,
-    spells             *TODO*,
     race               INTEGER REFERENCES Races,
-    subrace            INTEGER REFERENCES Subraces
+    subrace            INTEGER REFERENCES Subraces,
     player             INTEGER REFERENCES Players
 );

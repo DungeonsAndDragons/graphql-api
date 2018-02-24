@@ -9,7 +9,7 @@
  - Classes
  - Health
  - Items
- - Equipment
  - InventoryEntries
  - Spells
+ - SelectedSpells
  - Characters
