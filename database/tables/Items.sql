@@ -1,18 +1,18 @@
 CREATE TABLE Items (
     id                 INTEGER PRIMARY KEY,
-    name               TEXT,
-    family             TEXT,
-    category           TEXT,
-    subcategory        TEXT,
-    rarity             TEXT,
-    isMagic            BOOLEAN,
+    name               TEXT NOT NULL DEFAULT "",
+    family             TEXT NOT NULL DEFAULT "",
+    category           TEXT NOT NULL DEFAULT "",
+    subcategory        TEXT NOT NULL DEFAULT "",
+    rarity             TEXT NOT NULL DEFAULT "",
+    isMagic            BOOLEAN NOT NULL DEFAULT 0,
     requiresAttunement BOOLEAN,
-    attuneRequirement  BOOLEAN,
+    attuneRequirement  TEXT,
     cost               INTEGER REFERENCES Money,
-    weight             INTEGER,
+    weight             INTEGER NOT NULL,
     damage             INTEGER REFERENCES DiceThrow,
     damageType         TEXT,
     criticalMultiplier INTEGER,
     specialAbility     TEXT,
-    fullText           TEXT
+    fullText           TEXT NOT NULL DEFAULT ""
 );

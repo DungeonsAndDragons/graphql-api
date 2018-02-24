@@ -1,6 +1,6 @@
 CREATE TABLE Health(
     id         INTEGER PRIMARY KEY,
-    maximum    INTEGER,
-    current    INTEGER,
-    temporary  INTEGER
+    maximum    INTEGER NOT NULL,
+    current    INTEGER NOT NULL,
+    temporary  INTEGER NOT NULL DEFAULT 0
 );

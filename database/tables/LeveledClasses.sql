@@ -3,5 +3,5 @@ CREATE TABLE LeveledClasses (
 	character  INTEGER REFERENCES Characters,
     class      INTEGER REFERENCES Classes,
 	subclass   INTEGER REFERENCES Subclasses,
-    level      INTEGER
+    level      INTEGER NOT NULL DEFAULT 1
 );

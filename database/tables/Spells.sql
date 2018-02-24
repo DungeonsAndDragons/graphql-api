@@ -1,12 +1,12 @@
 CREATE TABLE Spells(
     id             INTEGER PRIMARY KEY,
-    name           TEXT,
-    school         TEXT,
-    subschool      TEXT,
-    level          TEXT,
-    castingTime    TEXT,
-    range          TEXT,
-    duration       TEXT,
-    description    TEXT,
-    scaling        TEXT
+    name           TEXT NOT NULL DEFAULT "",
+    school         TEXT NOT NULL DEFAULT "",
+    subschool      TEXT NOT NULL DEFAULT "",
+    level          TEXT NOT NULL DEFAULT "",
+    castingTime    TEXT NOT NULL DEFAULT "",
+    range          TEXT NOT NULL DEFAULT "",
+    duration       TEXT NOT NULL DEFAULT "",
+    description    TEXT NOT NULL DEFAULT "",
+    scaling        TEXT NOT NULL DEFAULT ""
 );

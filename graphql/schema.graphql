@@ -1,6 +1,6 @@
 
 type Query {
-    dies: DieType
+    spells: [Spell!]
 }
 #
 # type Mutation {
@@ -95,9 +95,9 @@ type Skill {
     id: ID!,
     type: SkillType!,
     proficiency: Boolean!,
-    # Rogues and bards (and some special subclasses) 
+    # Rogues and bards (and some special subclasses)
     # use double proficiency bonus (expertise) on their checks
-    expertise: Boolean!, 
+    expertise: Boolean!,
     modifier: Int!
 }
 
@@ -125,7 +125,7 @@ type LeveledClass {
 
 type Health {
     id: ID!,
-    maximum: Int,
+    maximum: Int!,
     current: Int!,
     temporary: Int!
 }

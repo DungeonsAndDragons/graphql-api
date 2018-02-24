@@ -1,6 +1,6 @@
 CREATE TABLE Money(
     id     INTEGER PRIMARY KEY,
-    copper INTEGER,
-    silver INTEGER,
-    gold   INTEGER
+    copper INTEGER NOT NULL DEFAULT 0,
+    silver INTEGER NOT NULL DEFAULT 0,
+    gold   INTEGER NOT NULL DEFAULT 0
 );
