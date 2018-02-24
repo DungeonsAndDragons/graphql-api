@@ -59,6 +59,16 @@ enum Alignment {
     ChaoticEvil
 }
 
+enum Rarity {
+    Common,
+    Uncommon,
+    Rare,
+    VeryRare,
+    Legendary,
+    Artifact,
+    Varies
+}
+
 enum AbilityType {
     Strength,
     Dexterity,
@@ -120,40 +130,28 @@ type Health {
     temporary: Int!
 }
 
-interface InventoryItem {
-    id: ID!,
-    name: String!,
-    category: String!,
-    weight: Int!,
-    fullText: String!
-}
-
-type Item implements InventoryItem {
-    id: ID!,
-    name: String!,
-    category: String!,
-    weight: Int!,
-    specialAbility: String,
-    fullText: String!
-}
-
-type Equipment implements InventoryItem { # TODO Missing some fields
+type Item {
     id: ID!,
     name: String!,
     family: String!, # e.g. Weapons
     category: String!, # e.g. Simple Weapons
     subcategory: String!, # e.g. Ranged Weapons
     cost: Money!,
+    rarity: Rarity, # Magic items only
+    isMagic: Boolean!,
+    requiresAttunement: Boolean, # Magic items only
+    attunementRequirement: String, # Attunable magic items only
     weight: Int!,
     damage: DiceThrow,
     damageType: String,
     criticalMultiplier: Int,
+    specialAbility: String,
     fullText: String!
 }
 
 type InventoryEntry {
     id: ID!,
-    item: InventoryItem!,
+    item: Item!,
     amount: Int!,
     totalWeight: Int!
 }
