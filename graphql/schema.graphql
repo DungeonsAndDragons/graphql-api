@@ -1,6 +1,8 @@
 
 type Query {
-    spells: [Spell!]
+    spells: [Spell!],
+    classes: [Class!],
+    items: [Item!],
 }
 #
 # type Mutation {
