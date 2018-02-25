@@ -7,7 +7,7 @@ CREATE TABLE Characters(
     armorClass         INTEGER,
     initiative         INTEGER,
     speed              INTEGER,
-    health             INTEGER REFERENCES Health,
+    health             INTEGER NOT NULL REFERENCES Health,
     deathSaveSuccesses INTEGER NOT NULL DEFAULT 0,
     deathSaveFailures  INTEGER NOT NULL DEFAULt 0,
     traits             TEXT NOT NULL DEFAULT "",
@@ -23,8 +23,8 @@ CREATE TABLE Characters(
     skin               TEXT NOT NULL DEFAULT "",
     hair               TEXT NOT NULL DEFAULT "",
     lore               TEXT NOT NULL DEFAULT "",
-    money              INTEGER REFERENCES Money,
-    race               INTEGER REFERENCES Races,
-    subrace            INTEGER REFERENCES Subraces,
-    player             INTEGER REFERENCES Players
+    money              INTEGER NOT NULL REFERENCES Money,
+    race               INTEGER REFERENCES Races, -- TODO Create this table
+    subrace            INTEGER REFERENCES Subraces, -- TODO Create this table
+    player             INTEGER NOT NULL REFERENCES Players
 );
