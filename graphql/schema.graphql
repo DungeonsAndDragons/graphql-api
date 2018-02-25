@@ -1,6 +1,7 @@
 
 type Query {
     token(username: String!, password: String!): String!,
+    players: [Player!],
     spells: [Spell!],
     classes: [Class!],
     items: [Item!],
