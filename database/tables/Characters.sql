@@ -16,9 +16,9 @@ CREATE TABLE Characters(
     flaws              TEXT NOT NULL DEFAULT "",
     proficiencies      TEXT NOT NULL DEFAULT "",
     features           TEXT NOT NULL DEFAULT "",
-    age                INTEGER NOT NULL, -- TODO Add default value
-    height             FLOAT NOT NULL, -- TODO Add default value,
-    weight             INTEGER NOT NULL, -- TODO Add default value,
+    age                INTEGER NOT NULL DEFAULT 50,
+    height             FLOAT NOT NULL DEFAULT 170, -- Value in centimeters
+    weight             INTEGER NOT NULL DEFAULT 60, -- Value in kg
     eyes               TEXT NOT NULL DEFAULT "",
     skin               TEXT NOT NULL DEFAULT "",
     hair               TEXT NOT NULL DEFAULT "",

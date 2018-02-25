@@ -1,2 +1,2 @@
-INSERT INTO Characters (name, age, height, weight, money, health, player) VALUES
-("Mindartis", 20, 180, 45, 1, 1, 1);
+INSERT INTO Characters (name, money, health, player) VALUES
+("Mindartis", 1, 1, 1);
