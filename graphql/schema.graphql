@@ -4,7 +4,7 @@ type Query {
     players: [Player!],
     spells: [Spell!],
     classes: [Class!],
-    items: [Item!],
+    items: [Item!],		   
 }
 #
 # type Mutation {
@@ -112,18 +112,58 @@ type SavingThrow {
     modifier: Int!
 }
 
+type Race {
+    id: ID!,
+    name: String!,
+    fullText: String!,
+    traits: [RaceTrait!]!,
+}
+
+type Subrace {
+    id: ID!,
+	name: String!,
+	race: Race!,
+	fullText: String!,
+	traits: [RaceTrait!]!
+}
+
+type RaceTrait {
+    id: ID!,
+	name: String!,
+	fullText: String!
+}
+
 type Class {
     id: ID!,
     name: String!,
     type: String!,
     alignments: [Alignment!]!,
     hitDie: DieType!,
-    fullText: String!
+    fullText: String!,
+	traits:[ClassTrait!]!,
+	savingThrows:[AbilityType!]!,
+	spellcaster: Boolean!,
+	spellcastingAbility:AbilityType
+}
+
+type Subclass {
+    id: ID!,
+    name: String!,
+    class: Class!,
+    traits:[ClassTrait!]!
+}
+
+type ClassTrait {
+    id: ID!,
+	name: String!,
+	level: Int!,
+	fullText: String!
 }
 
 # For multiclassing purposes
 type LeveledClass {
     class: Class!,
+	subclass: Subclass,
     level: Int!
 }
 
@@ -220,7 +260,8 @@ type Character {
     inventory: [InventoryEntry!]!,
     spells: [Spell!]!,
 
-    # race TBD
+	race: Race!,
+	subrace: Subrace!,
     # background TBD
 
     player: Player!
