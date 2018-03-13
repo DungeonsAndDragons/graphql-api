@@ -26,5 +26,6 @@ CREATE TABLE Characters(
     money              INTEGER NOT NULL REFERENCES Money,
     race               INTEGER REFERENCES Races, -- TODO Create this table
     subrace            INTEGER REFERENCES Subraces, -- TODO Create this table
+    image            TEXT,
     player             INTEGER NOT NULL REFERENCES Players
 );

@@ -266,7 +266,7 @@ type Character {
 	subrace: Subrace!,
     # background TBD
 
-    picture: ID # binary file
+    image: ID # binary file
 
     player: Player!
 }
