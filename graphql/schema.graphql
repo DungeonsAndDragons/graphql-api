@@ -6,7 +6,7 @@ type Query {
     characters: [Character!],
     spells: [Spell!],
     classes: [Class!],
-    items: [Item!],		   
+    items: [Item!]
 }
 #
 # type Mutation {
@@ -265,6 +265,8 @@ type Character {
 	race: Race!,
 	subrace: Subrace!,
     # background TBD
+
+    picture: ID # binary file
 
     player: Player!
 }
