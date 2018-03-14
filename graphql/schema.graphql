@@ -3,7 +3,7 @@ type Query {
     token(username: String!, password: String!): String!,
     refreshToken: String!,
     players: [Player!],
-    characters: [Character!],
+    characters(id: ID): [Character!],
     spells: [Spell!],
     classes: [Class!],
     items: [Item!]
