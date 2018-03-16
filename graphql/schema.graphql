@@ -152,7 +152,7 @@ type Subclass {
     id: ID!,
     name: String!,
     class: Class!,
-    traits:[ClassTrait!]!
+    traits: [ClassTrait!]!
 }
 
 type ClassTrait {
@@ -198,8 +198,7 @@ type Item {
 type InventoryEntry {
     id: ID!,
     item: Item!,
-    amount: Int!,
-    totalWeight: Int!
+    amount: Int!
 }
 
 type Spell {
@@ -213,6 +212,11 @@ type Spell {
     duration: String!,
     description: String!,
     scaling: String! # what happens when you use a higher lvl spell slot
+}
+
+type SelectedSpell {
+    id: ID!,
+    spell: Spell!
 }
 
 # Player controlled entity within the world
@@ -257,14 +261,15 @@ type Character {
     hair: String!,
 
     lore: String!,
+    notes: String,
 
     money: Money!,
     inventory: [InventoryEntry!]!,
-    spells: [Spell!]!,
+    spells: [SelectedSpell!]!,
 
 	race: Race!,
 	subrace: Subrace!,
-    # background TBD
+    # background: TBD,
 
     image: ID # binary file
 
